@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ind.js"></script>
+    
+</head>
+<body onload="masque()" >
+    
+    <div class="container">
+        <h1>Bienvenue dans notre jeux français</h1>
+        <div class="regles">
+        <button onclick="lire()" id="lir">Lire</button>
+        <p id="desc" style="text-align: left; color: black;"></p>
+        <button onclick="masq()" id="mas">Masquer</button>
+        <button onclick="jeux()" id="jx" class="commencer">Commencer</button>
+        
+        </div>
+        <p id="long" ></p>
+        <div class="detail">
+        <input type="text" name="" id="mt" class="mt">
+        <button onclick="vérification()" class="entrer" id="entrer">Entrer</button>
+        </div>
+        <h2 id="res"></h2>
+        <p id="m1"></p><br>
+        <p id="m2"></p><br>
+        <button type="reset" id="btnEssayer" onclick="essayer()" class="essayer">Essayer</button>
+        
+        <p id="m3" style="font-size: larger; font-weight: bolder;" class="center"></p>
+        
+        <button onclick="nouveau()" id="nouvo" class="nouvo">nouveau jeu</button>
+       
+    </div>
+    
+</body>
+</html>
