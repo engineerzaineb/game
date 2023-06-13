@@ -63,6 +63,7 @@ input {
   height: 50px;
   width: 150%;
   padding: 5px;
+  text-align: center;
 }
 h1{
   color: rgb(152, 49, 248);
