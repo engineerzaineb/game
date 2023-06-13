@@ -5,13 +5,7 @@ window.onload=function masquer() {
 
   
 }
-function masque() {
-  // Masquer le bouton "Essayer de nouveau"
-  document.getElementById("btnEssayer").style.display = "none";
-  document.getElementById("mas").style.display = "none";
 
-  
-}
 
 const mots = [
   "Bonjour",
@@ -204,14 +198,9 @@ function vérification() {
     document.getElementById("btnEssayer").style.display = "block";
   }
 }
-var btn=document.getElementById('btnEssayer');
-var compteurClics=0;
-/*function incrementCompteur(){
-    compteurClics++;
-    
-  }
 
-btn.addEventListener("click", incrementCompteur);*/
+var compteurClics=0;
+
 function essayer() {
   
   compteurClics++;  
