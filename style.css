@@ -65,6 +65,9 @@ input {
   padding: 5px;
   text-align: center;
 }
+input.active {
+  border: 2px solid blue;
+}
 h1{
   color: rgb(152, 49, 248);
 }

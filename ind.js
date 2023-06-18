@@ -1,11 +1,8 @@
-window.onload=function masquer() {
+window.onload = function masquer() {
   // Masquer le bouton "Essayer de nouveau"
   document.getElementById("btnEssayer").style.display = "none";
   document.getElementById("mas").style.display = "none";
-
-  
-}
-
+};
 
 const mots = [
   "Bonjour",
@@ -109,8 +106,10 @@ const mots = [
   "Froid",
   "Rire",
 ];
-function lire(){
-  document.getElementById("desc").innerHTML=`<h3>Bienvenue dans le jeu du mot mystère!</h3>
+function lire() {
+  document.getElementById(
+    "desc"
+  ).innerHTML = `<h3>Bienvenue dans le jeu du mot mystère!</h3>
   <p style="color: black;">Votre mission est de deviner un mot secret en proposant des mots jusqu'à ce que vous trouviez le mot correct. Vous disposez de 5 essais pour y parvenir.</p>
   
   <p style="color: black;">Le mot mystère est caché et vous devez le découvrir en proposant des mots.</p>
@@ -124,24 +123,25 @@ function lire(){
   
   <p style="color: black;">N'oubliez pas, chaque mot est une nouvelle chance de trouver la bonne réponse. Bonne chance et amusez-vous bien en jouant au jeu du mot mystère !</p>
   `;
-  
+
   document.getElementById("btnEssayer").style.display = "none";
   document.getElementById("entrer").style.display = "none";
   document.getElementById("nouvo").style.display = "none";
   document.getElementById("mas").style.display = "block";
   document.getElementById("lir").style.display = "none";
   document.getElementById("mt").style.display = "none";
-
-
+  document.getElementById("jx").style.display = "none";
 }
-function masq(){
-  document.getElementById("desc").innerHTML="";
+function masq() {
+  document.getElementById("desc").innerHTML = "";
   document.getElementById("mt").style.display = "block";
   document.getElementById("entrer").style.display = "block";
   document.getElementById("nouvo").style.display = "block";
   document.getElementById("lir").style.display = "block";
   document.getElementById("mas").style.display = "none";
+  document.getElementById("jx").style.display = "block";
 }
+
 function randomWord(index) {
   return mots[index];
 }
@@ -161,7 +161,6 @@ function verifyContent(msg) {
   return existingMessages.includes(msg);
 }
 
-
 function vérification() {
   var word = document.getElementById("mt").value;
   var found = false;
@@ -169,22 +168,23 @@ function vérification() {
   if (word.length == mot.length) {
     if (word === mot) {
       document.getElementById("res").innerHTML =
-        "Félicitation! vous avez deviné le mot " + mot;
+        "Félicitations! vous avez deviné le mot " + mot;
     } else {
       for (let i = 0; i < mot.length; i++) {
-        let charFound = false;
-
         for (let k = 0; k < word.length; k++) {
           if (mot[i] == word[k]) {
-            let letter = `Le mot contient le caractère "${mot[i]}" à la position ${i+1}`;
+            let letter = `Le mot contient le caractère "${
+              mot[i]
+            }" à la position ${i + 1}`;
             found = verifyContent(letter);
-            
+
             if (!found) {
-              document.getElementById("m1").insertAdjacentHTML("beforeend", letter + "<br>");
+              document
+                .getElementById("m1")
+                .insertAdjacentHTML("beforeend", letter + "<br>");
               existingMessages.push(letter); // Ajouter le message au tableau des messages existants
             }
 
-            charFound = true;
             break;
           }
         }
@@ -199,29 +199,25 @@ function vérification() {
   }
 }
 
-var compteurClics=0;
+
+var compteurClics = 0;
 
 function essayer() {
-  
-  compteurClics++;  
-  console.log("Nombre de clics : " + compteurClics);                                        
+  compteurClics++;
+  console.log("Nombre de clics : " + compteurClics);
   document.getElementById("mt").value = "";
   document.getElementById("res").innerHTML = "";
   document.getElementById("m2").innerHTML = "";
   document.getElementById("btnEssayer").style.display = "none";
-  
-  if(compteurClics == 5){
+  document.getElementById("m4").innerHTML="vous avez "+ compteurClics +" essaies";
+  if (compteurClics === 6) {
     document.getElementById("m1").innerHTML = "";
-    document.getElementById("m3").innerHTML= "le mot est "+ mot +" <br /> commencer nouveau jeux";
+    document.getElementById("m3").innerHTML =
+      "le mot est " + mot + " <br /> commencer nouveau jeux";
+
     
-    document.getElementById("entrer").style.display = "none";
-  } 
+  }
 }
-  
-      
-
-
-
 
 function nouveau() {
   document.getElementById("long").innerHTML = "";
@@ -231,5 +227,6 @@ function nouveau() {
   document.getElementById("m1").innerHTML = "";
   document.getElementById("m2").innerHTML = "";
   document.getElementById("m3").innerHTML = "";
+  document.getElementById("m4").innerHTML = "";
   document.getElementById("btnEssayer").style.display = "none";
 }
