@@ -210,7 +210,7 @@ function essayer() {
   document.getElementById("m2").innerHTML = "";
   document.getElementById("btnEssayer").style.display = "none";
   document.getElementById("m4").innerHTML="vous avez "+ compteurClics +" essaies";
-  if (compteurClics === 5) {
+  if (compteurClics === 6) {
     document.getElementById("m1").innerHTML = "";
     document.getElementById("m3").innerHTML =
       "le mot est " + mot + " <br /> commencer nouveau jeux";
